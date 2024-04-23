@@ -14,10 +14,14 @@ const Addtaskcontainer = ({ handleAddTask }) => {
                         console.log(e.target.value)
                         setDesc(e.target.value)
                     }} placeholder="Add Description" id="floatingTextarea"></textarea>
-                    <a href="/" className="btn btn-danger" onClick={(e)=>{
+                    <a href="/" className="btn btn-primary" onClick={(e)=>{
                         e.preventDefault();
                         handleAddTask({title, desc})
-                    }}>Card link</a>
+                        setTimeout(()=>{
+                            setTitle("")
+                            setDesc("")
+                        },1000)
+                    }}>Add</a>
                 </div>
             </div>
         </>
